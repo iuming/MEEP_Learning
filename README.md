@@ -17,11 +17,13 @@ MEEP（MIT Electromagnetic Equation Propagation）是一个免费开源的 FDTD 
 
 ```
 MEEP_Learning/
-├── tutorial/              # 20 个教程（按难度递进）
-│   ├── basic/             # 10 基础篇：光源、波导、光栅、能带
-│   ├── intermediate/      #  5 进阶篇：MMI、光子晶体、等离子体、非线性
-│   └── advanced/          #  5 高级篇：拓扑优化、腔QED、混沌、光镊、超连续谱
-├── examples/              #  3 实用工具与框架
+├── tutorial/              # 23 个教程（按难度递进）
+│   ├── basic/             # 11 基础篇：光源、波导、光栅、能带、对称性
+│   ├── intermediate/      #  6 进阶篇：MMI、光子晶体、等离子体、非线性、模式分解
+│   └── advanced/          #  6 高级篇：拓扑优化、腔QED、混沌、光镊、超连续谱、Harminv
+├── examples/              #  5 实用工具与框架
+├── docs/                  # 学习路线与概念说明
+├── cheatsheets/           # API 速查表
 ├── projects/              #  2 综合项目
 ├── RUNNING.md              # 运行说明与环境检查
 ├── environment.yml         # Conda 环境
@@ -56,6 +58,7 @@ pip install meep
 | 08 | `ring_resonator` | 环形谐振腔传输谱 |
 | 09 | `waveguide_bend` | 弯曲波导传播损耗 |
 | 10 | `grating_coupler` | 亚波长光栅耦合器设计 |
+| 11 | `symmetry_and_monitors` | 对称性、点监视器与二维场切片 |
 
 ### 🟡 进阶篇 `tutorial/intermediate/`
 
@@ -66,6 +69,7 @@ pip install meep
 | 03 | `plasmonic_antenna` | 金纳米棒 LSPR 仿真（Drude 色散模型） |
 | 04 | `directional_coupler` | 定向耦合器与模式拍长 |
 | 05 | `nonlinear_kerr` | Kerr 非线性（SPM 光谱展宽） |
+| 06 | `eigenmode_decomposition` | 本征模源与波导端口模式分解 |
 
 ### 🔴 高级篇 `tutorial/advanced/`
 
@@ -76,6 +80,7 @@ pip install meep
 | 03 | `chaotic_microcavity` | 变形微盘腔 WG 模式与混沌射线动力学 |
 | 04 | `optical_tweezers` | 光力效应 — Maxwell 应力张量光阱力仿真 |
 | 05 | `supercontinuum` | PCF 超连续谱 — 非线性脉冲传播与光谱展宽 |
+| 06 | `harminv_cavity_q` | Harminv 提取谐振腔频率与 Q 值 |
 
 ### 🛠 实用工具 `examples/`
 
@@ -84,6 +89,8 @@ pip install meep
 | `visualization_tools.py` | 2D/矢量场/动画可视化函数库 |
 | `s_parameter_scanner.py` | 自动化 S 参数扫描框架 |
 | `near_to_far_field.py` | 天线远场辐射方向图计算 |
+| `flux_normalization_reflection.py` | 空结构归一化与反射/透射谱模板 |
+| `mode_decomposition_ports.py` | 二端口波导模式分解 S 参数模板 |
 
 ### 🚀 综合项目 `projects/`
 
@@ -96,12 +103,13 @@ pip install meep
 
 | 难度 | 数量 | 涵盖主题 |
 |------|------|----------|
-| 🟢 基础 | 10 | 光源、边界、波导、光栅、能带、谐振腔 |
-| 🟡 进阶 | 5 | MMI、光子晶体、等离激元、定向耦合、Kerr 非线性 |
-| 🔴 高级 | 5 | 拓扑优化、腔 QED、混沌腔、光镊、超连续谱 |
-| 🛠 工具 | 3 | 可视化库、S 参数扫描、近远场变换 |
+| 🟢 基础 | 11 | 光源、边界、波导、光栅、能带、谐振腔、监视器 |
+| 🟡 进阶 | 6 | MMI、光子晶体、等离激元、定向耦合、Kerr 非线性、模式分解 |
+| 🔴 高级 | 6 | 拓扑优化、腔 QED、混沌腔、光镊、超连续谱、Harminv |
+| 🛠 工具 | 5 | 可视化库、S 参数扫描、近远场变换、通量归一化、端口模板 |
 | 🚀 项目 | 2 | DWDM 波分复用、超表面透镜 |
-| **合计** | **25** | |
+| 📚 文档 | 2 | 学习地图、Python API 速查表 |
+| **合计** | **30** | |
 
 ## 快速开始
 
@@ -151,10 +159,10 @@ sim.run(until=200)
 
 ```
 基础 01-05  →  掌握 MEEP 基本工作流
-基础 06-10  →  片上集成光子学核心器件
-进阶 01-05  →  现代纳米光子学设计
+基础 06-11  →  片上集成光子学核心器件与监视器技巧
+进阶 01-06  →  现代纳米光子学设计与端口模式分析
 工具        →  建立自己的仿真工具箱
-高级 01-05  →  前沿研究方向与方法
+高级 01-06  →  前沿研究方向与方法
 项目        →  独立完成完整器件设计
 ```
 

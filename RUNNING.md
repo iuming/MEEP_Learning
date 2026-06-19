@@ -25,6 +25,24 @@ python examples/near_to_far_field.py
 python projects/wdm_demux.py
 ```
 
+
+## 新增学习材料
+
+```bash
+# 阅读学习路线和 API 速查表
+less docs/learning_map.md
+less cheatsheets/meep_python_api.md
+
+# 运行新增示例
+python tutorial/basic/11_symmetry_and_monitors.py
+python tutorial/intermediate/06_eigenmode_decomposition.py
+python tutorial/advanced/06_harminv_cavity_q.py
+python examples/flux_normalization_reflection.py
+python examples/mode_decomposition_ports.py
+```
+
+新增脚本会在当前目录保存对应 PNG 图像。部分模式分解/Harminv 示例计算量比基础 1D 示例更大，建议先保持默认分辨率，确认流程后再提高精度。
+
 ## 输出文件
 
 仿真可能生成 HDF5、图片、CSV、视频等结果文件，这些已在 `.gitignore` 中排除，避免污染仓库。
