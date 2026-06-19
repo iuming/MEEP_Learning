@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# MEEP / HDF5 outputs
+*.h5
+*.hdf5
+*.vts
+*.vtk
+*.xdmf
+*.mpb
+
+# Generated figures/data
+outputs/
+output/
+results/
+figures/
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.mp4
+*.csv
+*.dat
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/
+*~

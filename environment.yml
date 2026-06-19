@@ -1,0 +1,11 @@
+name: meep-learning
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.10
+  - pymeep
+  - pymeep-extras
+  - numpy
+  - scipy
+  - matplotlib
+  - h5py

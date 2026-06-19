@@ -23,6 +23,9 @@ MEEP_Learning/
 │   └── advanced/          #  5 高级篇：拓扑优化、腔QED、混沌、光镊、超连续谱
 ├── examples/              #  3 实用工具与框架
 ├── projects/              #  2 综合项目
+├── RUNNING.md              # 运行说明与环境检查
+├── environment.yml         # Conda 环境
+├── requirements.txt        # pip 依赖参考
 └── README.md
 ```
 
@@ -30,8 +33,8 @@ MEEP_Learning/
 
 ```bash
 # Conda（推荐）
-conda create -n mp -c conda-forge pymeep pymeep-extras
-conda activate mp
+conda env create -f environment.yml
+conda activate meep-learning
 
 # 或 pip
 pip install meep
@@ -109,6 +112,8 @@ cd MEEP_Learning
 
 # 运行第一个示例
 python tutorial/basic/01_hello_meep.py
+
+# 更多运行细节见 RUNNING.md
 ```
 
 ```python

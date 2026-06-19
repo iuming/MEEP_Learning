@@ -1,0 +1,5 @@
+meep
+numpy
+matplotlib
+scipy
+h5py
