@@ -17,12 +17,12 @@ MEEP（MIT Electromagnetic Equation Propagation）是一个免费开源的 FDTD 
 
 ```
 MEEP_Learning/
-├── tutorial/              # 入门教程（按难度递进）
-│   ├── basic/             # 基础篇：光源、结构、监视器
-│   ├── intermediate/      # 进阶篇（待添加）
-│   └── advanced/          # 高级篇（待添加）
-├── examples/              # 独立仿真示例
-├── projects/              # 综合项目练习
+├── tutorial/              # 20 个教程（按难度递进）
+│   ├── basic/             # 10 基础篇：光源、波导、光栅、能带
+│   ├── intermediate/      #  5 进阶篇：MMI、光子晶体、等离子体、非线性
+│   └── advanced/          #  5 高级篇：拓扑优化、腔QED、混沌、光镊、超连续谱
+├── examples/              #  3 实用工具与框架
+├── projects/              #  2 综合项目
 └── README.md
 ```
 
@@ -66,7 +66,13 @@ pip install meep
 
 ### 🔴 高级篇 `tutorial/advanced/`
 
-> 即将添加：拓扑优化、逆设计、量子发射体
+| 编号 | 文件 | 内容 |
+|------|------|------|
+| 01 | `topology_optimization` | 伴随法拓扑优化 → 逆向设计 1×2 分束器 |
+| 02 | `purcell_effect` | 腔 QED — 量子发射体 Purcell 因子与自发辐射增强 |
+| 03 | `chaotic_microcavity` | 变形微盘腔 WG 模式与混沌射线动力学 |
+| 04 | `optical_tweezers` | 光力效应 — Maxwell 应力张量光阱力仿真 |
+| 05 | `supercontinuum` | PCF 超连续谱 — 非线性脉冲传播与光谱展宽 |
 
 ### 🛠 实用工具 `examples/`
 
@@ -83,7 +89,27 @@ pip install meep
 | `wdm_demux.py` | 4 通道 DWDM 波分复用器（级联微环） |
 | `metalens.py` | 介质超表面透镜（TiO2 纳米柱） |
 
+## 📊 内容总览
+
+| 难度 | 数量 | 涵盖主题 |
+|------|------|----------|
+| 🟢 基础 | 10 | 光源、边界、波导、光栅、能带、谐振腔 |
+| 🟡 进阶 | 5 | MMI、光子晶体、等离激元、定向耦合、Kerr 非线性 |
+| 🔴 高级 | 5 | 拓扑优化、腔 QED、混沌腔、光镊、超连续谱 |
+| 🛠 工具 | 3 | 可视化库、S 参数扫描、近远场变换 |
+| 🚀 项目 | 2 | DWDM 波分复用、超表面透镜 |
+| **合计** | **25** | |
+
 ## 快速开始
+
+```bash
+# 克隆仓库
+git clone git@github.com:iuming/MEEP_Learning.git
+cd MEEP_Learning
+
+# 运行第一个示例
+python tutorial/basic/01_hello_meep.py
+```
 
 ```python
 import meep as mp
@@ -105,27 +131,40 @@ sources = [mp.Source(
     center=mp.Vector3(-7, 0)
 )]
 
-# PML
-pml_layers = [mp.PML(1.0)]
-
 # 运行
 sim = mp.Simulation(
     cell_size=cell,
     geometry=geometry,
     sources=sources,
-    boundary_layers=pml_layers,
+    boundary_layers=[mp.PML(1.0)],
     resolution=20
 )
-
 sim.run(until=200)
 ```
+
+## 🔗 学习路径建议
+
+```
+基础 01-05  →  掌握 MEEP 基本工作流
+基础 06-10  →  片上集成光子学核心器件
+进阶 01-05  →  现代纳米光子学设计
+工具        →  建立自己的仿真工具箱
+高级 01-05  →  前沿研究方向与方法
+项目        →  独立完成完整器件设计
+```
+
+## 贡献
+
+欢迎提交 PR！新增教程请参考已有文件的代码风格：
+- 中文注释说明关键步骤
+- 自包含、可直接运行
+- 包含结果分析与物理讨论
 
 ## 资源
 
 - [MEEP 官方文档](https://meep.readthedocs.io/)
 - [MEEP GitHub](https://github.com/NanoComp/meep)
-- [FDTD 入门（英文）](https://en.wikipedia.org/wiki/Finite-difference_time-domain_method)
-- [计算电磁学教程 (中文)](https://www.bilibili.com/video/BV1KJ411W7zp)
+- [FDTD 入门](https://en.wikipedia.org/wiki/Finite-difference_time-domain_method)
 
 ## License
 
