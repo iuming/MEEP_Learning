@@ -45,22 +45,43 @@ pip install meep
 |------|------|------|
 | 01 | `hello_meep` | 第一个仿真：平面波透过真空 |
 | 02 | `source_types` | 连续波、高斯脉冲、宽频源 |
-| 03 | `dielectric_slab` | 电介质平板传输与反射 |
-| 04 | `bragg_grating` | 布拉格光栅与带隙 |
-| 05 | `pml_absorption` | PML 吸收边界条件 |
+| 03 | `dielectric_slab` | 介质平板传输与反射（含解析验证） |
+| 04 | `bragg_grating` | 布拉格光栅与光子带隙 |
+| 05 | `pml` | PML 吸收边界条件对比 |
 | 06 | `band_structure` | 光子晶体能带结构计算 |
-| 07 | `waveguide` | 介质波导模式分析 |
-| 08 | `ring_resonator` | 环形谐振腔 |
-| 09 | `field_monitors` | 场监视器与可视化 |
-| 10 | `s_parameters` | S 参数计算 |
+| 07 | `waveguide` | 介质波导模式分析与场可视化 |
+| 08 | `ring_resonator` | 环形谐振腔传输谱 |
+| 09 | `waveguide_bend` | 弯曲波导传播损耗 |
+| 10 | `grating_coupler` | 亚波长光栅耦合器设计 |
 
 ### 🟡 进阶篇 `tutorial/intermediate/`
 
-> 即将添加：非线性材料、各向异性介质、片上器件、光栅耦合器
+| 编号 | 文件 | 内容 |
+|------|------|------|
+| 01 | `mmi_coupler` | 1×2 多模干涉耦合器设计 |
+| 02 | `photonic_crystal_wg` | 光子晶体波导与慢光效应 |
+| 03 | `plasmonic_antenna` | 金纳米棒 LSPR 仿真（Drude 色散模型） |
+| 04 | `directional_coupler` | 定向耦合器与模式拍长 |
+| 05 | `nonlinear_kerr` | Kerr 非线性（SPM 光谱展宽） |
 
 ### 🔴 高级篇 `tutorial/advanced/`
 
-> 即将添加：拓扑优化、逆设计、量子发射体、近场-远场变换
+> 即将添加：拓扑优化、逆设计、量子发射体
+
+### 🛠 实用工具 `examples/`
+
+| 文件 | 内容 |
+|------|------|
+| `visualization_tools.py` | 2D/矢量场/动画可视化函数库 |
+| `s_parameter_scanner.py` | 自动化 S 参数扫描框架 |
+| `near_to_far_field.py` | 天线远场辐射方向图计算 |
+
+### 🚀 综合项目 `projects/`
+
+| 项目 | 内容 |
+|------|------|
+| `wdm_demux.py` | 4 通道 DWDM 波分复用器（级联微环） |
+| `metalens.py` | 介质超表面透镜（TiO2 纳米柱） |
 
 ## 快速开始
 
