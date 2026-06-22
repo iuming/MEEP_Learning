@@ -9,3 +9,5 @@ dependencies:
   - scipy
   - matplotlib
   - h5py
+  - pandas
+  - autograd

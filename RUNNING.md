@@ -15,6 +15,12 @@ conda activate meep-learning
 conda install -c conda-forge pymeep pymeep-extras numpy scipy matplotlib h5py
 ```
 
+部分进阶工具会额外用到 `pandas`（参数扫描表格）和 `autograd`（拓扑优化示例）。如果不是用本仓库的 `environment.yml` 创建环境，请一并安装：
+
+```bash
+conda install -c conda-forge pandas autograd
+```
+
 ## 运行教程
 
 所有脚本均为自包含示例，可以从仓库根目录运行：
@@ -52,3 +58,5 @@ python examples/mode_decomposition_ports.py
 ```bash
 python -m py_compile $(find tutorial examples projects -name '*.py')
 ```
+
+这个检查只验证 Python 语法，不会启动完整 FDTD 仿真；适合在提交前快速确认脚本没有语法错误。
