@@ -99,6 +99,11 @@ pip install meep
 | `wdm_demux.py` | 4 通道 DWDM 波分复用器（级联微环） |
 | `metalens.py` | 介质超表面透镜（TiO2 纳米柱） |
 
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=iuming/MEEP_Learning&type=Date)](https://www.star-history.com/#iuming/MEEP_Learning&Date)
+
 ## 📊 内容总览
 
 | 难度 | 数量 | 涵盖主题 |
